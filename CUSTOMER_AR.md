@@ -8,7 +8,9 @@ not imported.
 
 ## Open the customer portal
 
-Use **Customer login** on the existing login page, or visit `/#/customer`.
+The home page offers **Employee Login**, **Customer Login**, and **AR Visual Guide**.
+Employee Login opens the staff form. Customer Login opens `/#/customer`.
+AR Visual Guide opens `/#/customer/ar` and continues to tank selection after customer sign-in.
 Customers can sign in, create an account, and open **AR visual guide**.
 Customer tokens use a separate storage key and cannot authorize staff APIs.
 Staff tokens cannot authorize the customer profile endpoint.

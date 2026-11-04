@@ -52,7 +52,7 @@ function TopNav({ currentView, setCurrentView }) {
     <header className="login-nav">
       <div
         className="login-nav-brand"
-        onClick={() => setCurrentView("login")}
+        onClick={() => setCurrentView("home")}
         style={{ cursor: "pointer" }}
       >
         <img src={navLogo} alt="GasTrack Logo" className="login-nav-logo" />
@@ -61,8 +61,8 @@ function TopNav({ currentView, setCurrentView }) {
         <a className="login-nav-link" href="#/customer">Customer login</a>
         <button
           type="button"
-          className={`login-nav-link ${currentView === "login" ? "active" : ""}`}
-          onClick={() => setCurrentView("login")}
+          className={`login-nav-link ${currentView === "home" ? "active" : ""}`}
+          onClick={() => setCurrentView("home")}
         >
           Home
         </button>
@@ -129,7 +129,7 @@ function LegalDocumentModal({ documentKey, onClose }) {
 
 export default function Login({ onLogin, onRegisterSuccess, sessionError }) {
   // Navigation State: 'login' | 'register' | 'about' | 'contact'
-  const [currentView, setCurrentView] = useState("login");
+  const [currentView, setCurrentView] = useState("home");
 
   // Login Form State
   const [email, setEmail] = useState("");
@@ -298,17 +298,25 @@ export default function Login({ onLogin, onRegisterSuccess, sessionError }) {
       <TopNav currentView={currentView} setCurrentView={setCurrentView} />
 
       <main className="login-content">
+        {currentView === "home" && (
+          <section className="login-card home-entry-card" aria-label="GasTrack home">
+            <img src={cardLogo} alt="GasTrack" className="login-card-logo-img" />
+            <h1 className="login-welcome">Welcome to GasTrack!</h1>
+            <p className="login-subtitle">Choose where you want to go</p>
+            <div className="home-entry-options">
+              <button type="button" onClick={() => setCurrentView("login")}>Employee Login</button>
+              <a href="#/customer">Customer Login</a>
+              <a href="#/customer/ar">AR Visual Guide</a>
+            </div>
+            {sessionError && <p className="login-error" role="alert">{sessionError}</p>}
+          </section>
+        )}
         {/* LOGIN VIEW */}
         {currentView === "login" && (
           <div className="login-card">
             <img src={cardLogo} alt="GasTrack" className="login-card-logo-img" />
-            <h2 className="login-welcome">Welcome to GasTrack!</h2>
-            <p className="login-subtitle">Login to your account</p>
-            <div className="home-customer-links" aria-label="Customer access">
-              <a href="#/customer">Customer Login</a>
-              <a href="#/customer/ar">AR Visual Guide</a>
-              <p>Customer sign-in is required to open the AR guide.</p>
-            </div>
+            <h2 className="login-welcome">Employee Login</h2>
+            <p className="login-subtitle">Sign in to your employee account</p>
 
             <form className="login-form" onSubmit={handleLoginSubmit}>
               <div className="input-field-group">

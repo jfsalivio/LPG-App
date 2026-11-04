@@ -7,6 +7,15 @@ const noOverflow = async page => {
 test('login and company registration fit the viewport', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.login-card')).toBeVisible();
+  const home = page.getByRole('region', { name: 'GasTrack home' });
+  await expect(home.getByRole('button', { name: 'Employee Login', exact: true })).toBeVisible();
+  await expect(home.getByRole('link', { name: 'Customer Login', exact: true })).toBeVisible();
+  await expect(home.getByRole('link', { name: 'AR Visual Guide', exact: true })).toBeVisible();
+  await expect(page.locator('.login-form')).toBeHidden();
+  await noOverflow(page);
+  await home.getByRole('button', { name: 'Employee Login', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Employee Login', exact: true })).toBeVisible();
+  await expect(page.locator('.login-form')).toBeVisible();
   await noOverflow(page);
   await page.getByRole('button', { name: 'Register LPG Company' }).click();
   await expect(page.locator('.reg-grid').first()).toBeVisible();
