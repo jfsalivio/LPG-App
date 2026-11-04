@@ -13,7 +13,7 @@ export default function CustomerPortal() {
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const [arOpen, setArOpen] = useState(false);
+  const [arOpen, setArOpen] = useState(() => window.location.hash === '#/customer/ar');
   const [retry, setRetry] = useState(0);
 
   useEffect(() => {

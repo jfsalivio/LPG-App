@@ -1,5 +1,9 @@
 /* Loaded after module styles so phone layouts consistently take precedence. */
 .mobile-header, .mobile-menu-close, .mobile-menu-backdrop { display: none; }
+.home-customer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
+.home-customer-links a { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px; border: 1px solid #1e3a5f; border-radius: 10px; color: #1e3a5f; text-decoration: none; font-size: 14px; font-weight: 700; text-align: center; }
+.home-customer-links a:first-child { background: #1e3a5f; color: white; }
+.home-customer-links p { grid-column: 1 / -1; margin: 0; color: #6b7280; font-size: 12px; line-height: 1.5; text-align: center; }
 body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
 button, a, input, select, textarea { touch-action: manipulation; }
 button:focus-visible, a:focus-visible { outline: 3px solid #3b82f6; outline-offset: 3px; }

@@ -304,6 +304,11 @@ export default function Login({ onLogin, onRegisterSuccess, sessionError }) {
             <img src={cardLogo} alt="GasTrack" className="login-card-logo-img" />
             <h2 className="login-welcome">Welcome to GasTrack!</h2>
             <p className="login-subtitle">Login to your account</p>
+            <div className="home-customer-links" aria-label="Customer access">
+              <a href="#/customer">Customer Login</a>
+              <a href="#/customer/ar">AR Visual Guide</a>
+              <p>Customer sign-in is required to open the AR guide.</p>
+            </div>
 
             <form className="login-form" onSubmit={handleLoginSubmit}>
               <div className="input-field-group">

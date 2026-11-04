@@ -1,6 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 const customer = { customerId: 'CUST-002', fullName: 'Test Customer', email: 'customer@example.test' };
+test('home page AR link opens customer sign-in and continues to tank selection', async ({ page }) => {
+  await mockAuth(page);
+  await page.goto('/');
+  await expect(page.locator('.home-customer-links').getByRole('link', { name: 'Customer Login', exact: true })).toBeVisible();
+  await page.locator('.home-customer-links').getByRole('link', { name: 'AR Visual Guide' }).click();
+  await page.locator('input[name=email]').fill(customer.email);
+  await page.locator('input[name=password]').fill('Customer123!');
+  await page.getByRole('button', { name: 'Sign in as customer' }).click();
+  await expect(page.getByRole('heading', { name: 'Your cylinder, in view' })).toBeVisible();
+});
 async function mockAuth(page) {
   await page.route('http://localhost:4000/customer-auth/**', route => route.fulfill({ json:
     route.request().method() === 'GET' ? customer : { token: 'customer-test-token', customer } }));
