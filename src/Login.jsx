@@ -58,6 +58,7 @@ function TopNav({ currentView, setCurrentView }) {
         <img src={navLogo} alt="GasTrack Logo" className="login-nav-logo" />
       </div>
       <nav className="login-nav-links">
+        <a className="login-nav-link" href="#/customer">Customer login</a>
         <button
           type="button"
           className={`login-nav-link ${currentView === "login" ? "active" : ""}`}

@@ -177,6 +177,15 @@ CREATE TABLE Customer (
   FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
+CREATE TABLE CustomerAuth (
+  CustomerID VARCHAR(20) PRIMARY KEY,
+  Email VARCHAR(254) NOT NULL UNIQUE,
+  PasswordHash VARCHAR(255) NOT NULL,
+  CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_customer_auth_customer FOREIGN KEY (CustomerID)
+    REFERENCES Customer(CustomerID) ON DELETE CASCADE
+);
+
 CREATE TABLE `Order` (
   historical_customer_id VARCHAR(20) NULL,
   customer_name VARCHAR(150) NULL,

@@ -75,6 +75,7 @@ app.get("/health", (req, res) => res.json({ status: "ok" }));
 app.use("/contact", require("./routes/contactRoutes"));
 
 app.use("/auth", authRoutes);
+app.use('/customer-auth', require('./routes/customerAuthRoutes'));
 app.use("/products", productRoutes);
 app.use("/categories", categoryRoutes);
 app.use("/brands", brandRoutes);

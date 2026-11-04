@@ -1,0 +1,39 @@
+.customer-portal { min-height: 100dvh; background: #f6f8fc; color: #1c2c43; font-family: system-ui, sans-serif; }
+.customer-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: max(16px, env(safe-area-inset-top)) 20px 16px; background: #264061; color: white; }
+.customer-header a, .customer-header button { color: inherit; background: transparent; border: 0; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; }
+.customer-header span { font-weight: 700; }
+.customer-main { width: min(100%, 560px); margin: auto; padding: 32px 16px max(32px, env(safe-area-inset-bottom)); }
+.customer-logo { display: block; width: 160px; height: 88px; object-fit: contain; margin: 0 auto 24px; }
+.customer-card { background: white; padding: 28px; border-radius: 24px; border: 1px solid #e7ecf3; box-shadow: 0 12px 40px #2640610a; }
+.customer-card h1 { font-size: clamp(24px, 5vw, 30px); line-height: 1.2; margin: 12px 0; overflow-wrap: anywhere; }
+.customer-card p { color: #63748a; line-height: 1.6; }
+.customer-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .12em; color: #4c6d95; }
+.customer-form { display: flex; flex-direction: column; gap: 18px; margin-top: 24px; }
+.customer-form label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 650; }
+.customer-form input, .customer-form textarea { width: 100%; min-width: 0; border: 1px solid #ccd6e3; background: #f9fbfd; border-radius: 12px; padding: 13px; font: inherit; font-size: 16px; color: #1c2c43; }
+.customer-password { display: flex; position: relative; }
+.customer-password input { padding-right: 50px; }
+.customer-password button { position: absolute; right: 3px; inset-block: 3px; width: 44px; border: 0; background: transparent; color: #63748a; }
+.customer-primary { width: 100%; min-height: 52px; display: flex; justify-content: center; align-items: center; gap: 10px; background: #264061; color: white; border: 0; border-radius: 14px; padding: 14px; font: inherit; font-weight: 750; cursor: pointer; }
+.customer-primary:disabled { opacity: .6; cursor: wait; }
+.customer-link { display: block; margin: 16px auto 0; border: 0; background: transparent; color: #264061; min-height: 44px; text-decoration: underline; cursor: pointer; }
+.customer-card .customer-error { color: #b42318; margin: 0; }
+.ar-tank-options { display: grid; gap: 12px; margin-block: 24px; }
+.ar-tank-option { width: 100%; display: flex; align-items: center; gap: 16px; text-align: left; padding: 16px; border: 2px solid #e7ecf3; border-radius: 16px; background: white; color: #264061; cursor: pointer; }
+.ar-tank-option.selected { border-color: #264061; background: #f0f5fc; }
+.ar-tank-option img { width: 64px; height: 64px; }
+.ar-tank-option span { min-width: 0; }
+.ar-tank-option small { display: block; color: #63748a; margin-top: 6px; }
+.customer-card .ar-info { background: #eef3fa; padding: 14px; border-radius: 12px; font-size: 13px; }
+.ar-camera { position: relative; height: calc(100dvh - 92px); min-height: 480px; background: #101820; overflow: hidden; color: white; }
+.ar-camera video { width: 100%; height: 100%; object-fit: cover; }
+.ar-camera-top { position: absolute; inset: 16px 16px auto; display: flex; justify-content: space-between; align-items: center; }
+.ar-camera button { min-height: 44px; background: #ffffffeb; color: #264061; border: 0; border-radius: 12px; padding: 10px 16px; cursor: pointer; }
+.ar-reference-frame { position: absolute; top: 14%; left: 50%; transform: translateX(-50%); width: min(68vw, 280px); height: 45%; border: 2px dashed #fff9; border-radius: 24px; display: grid; place-items: center; }
+.ar-reference-frame img { width: 80%; height: 90%; object-fit: contain; opacity: .45; }
+.ar-camera-controls { position: absolute; inset: auto 0 0; background: linear-gradient(transparent, #101820 25%); text-align: center; padding: 32px 20px max(24px, env(safe-area-inset-bottom)); }
+.ar-camera-controls p { font-size: 14px; }
+.ar-control-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.ar-control-row button { display: inline-flex; align-items: center; gap: 8px; }
+.ar-camera-controls small { display: block; margin-top: 16px; color: #d9e3ef; }
+@media (max-width: 380px) { .customer-card { padding: 20px; } .customer-header { padding-inline: 12px; } }

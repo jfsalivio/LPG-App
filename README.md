@@ -5,6 +5,10 @@ and ML source plus a responsive mobile interface and Capacitor Android project.
 Start with [MOBILE.md](MOBILE.md) for Android Studio setup, phone/emulator API
 configuration, and the private assets needed to run the system.
 
+Customer sign-in and the AR camera guide are documented in
+[CUSTOMER_AR.md](CUSTOMER_AR.md). Run the customer-auth migration before using
+customer accounts.
+
 The remaining documentation below was imported from the source repository.
 Its dated verification results describe the upstream installation, not this clone.
 

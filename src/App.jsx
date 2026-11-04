@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect, useMemo } from "react";
 import Login from "./Login";
+import CustomerPortal from './customer/CustomerPortal';
 import ResetPasswordPage from "./ResetPasswordPage";
 import Sidebar from "./Sidebar";
 import Dashboard from "./Dashboard";
@@ -46,6 +47,7 @@ export default function App() {
   const [activeItem, setActiveItem] = useState("dashboard");
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [showResetPage, setShowResetPage] = useState(isResetPasswordRoute);
+  const [showCustomerPortal, setShowCustomerPortal] = useState(() => window.location.hash.startsWith('#/customer'));
   const [currentUser, setCurrentUser] = useState(null);
   const [sessionReady, setSessionReady] = useState(false);
   const [sessionError, setSessionError] = useState('');
@@ -62,7 +64,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => setShowResetPage(isResetPasswordRoute());
+    const handleHashChange = () => {
+      setShowResetPage(isResetPasswordRoute());
+      setShowCustomerPortal(window.location.hash.startsWith('#/customer'));
+    };
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
@@ -123,6 +128,8 @@ export default function App() {
 
   // The password-reset link takes priority over everything else, whether or
   // not the person happens to already be logged in on this browser.
+  if (showCustomerPortal) return <CustomerPortal />;
+
   if (showResetPage) {
     return (
       <ResetPasswordPage

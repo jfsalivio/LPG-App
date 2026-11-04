@@ -112,6 +112,7 @@ async function authenticate(req, res, next) {
 
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
+    if (payload.type === 'customer') return next(new ApiError(403, 'Customer accounts cannot access staff modules.'));
     const [actors] = await require('../config/db').query(`SELECT u.UserID AS userId,u.CompanyID AS companyId,u.RoleID AS roleId,r.RoleName AS roleName,u.Email AS email,u.Status AS status,u.ModuleAccess AS moduleAccess FROM User u JOIN Role r ON r.RoleID=u.RoleID WHERE u.UserID=:id`, {id:payload.userId});
     if (!actors[0] || actors[0].status !== 'Active') return next(new ApiError(401, 'Account is inactive or unavailable'));
     req.user = actors[0];

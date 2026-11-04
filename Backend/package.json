@@ -4,6 +4,7 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
+    "migrate:customer-auth": "node db/migrate_customer_auth.js",
     "migrate:vehicle-ids": "node db/migrate_vehicle_ids.js",
     "migrate:activity-record-id": "node db/migrate_activity_record_id.js",
     "migrate:delivery-vehicle-snapshot": "node db/migrate_delivery_vehicle_snapshot.js",
