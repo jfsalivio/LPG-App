@@ -91,8 +91,17 @@ successfully with inherited warnings; frontend utility tests pass (3 tests);
 backend tests excluding `*.database.test.js` pass (116 passed, 1 skipped)
 using isolated placeholder database environment values for mocked tests;
 Python source compilation passes; Capacitor Android asset sync passes.
-Live API/database/ML integration was not run. Android APK compilation was
-attempted but stopped because the installed JDK is 25; use JDK 21 to build.
+On November 4, 2026, the Android debug APK was built with JDK 21 and SDK 36,
+installed on the Medium Phone emulator, and opened successfully. The three
+home options and an HTTP 200 API health request were verified from the actual
+Android WebView. The configured database connection and both login endpoints
+were checked; the missing CustomerAuth table was created with its migration.
+ML prediction and successful sign-in with a real account were not tested.
+
+For emulator builds, set `VITE_API_BASE_URL=http://10.0.2.2:4000` before
+building/syncing; `localhost` inside Android refers to the emulator itself.
+The API must be running from this repository's `Backend` folder. An older API
+instance can pass `/health` while missing the customer-login routes.
 
 ```powershell
 npm.cmd run build
