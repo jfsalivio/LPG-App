@@ -1,0 +1,53 @@
+﻿{
+  "name": "gastrack-backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "migrate:vehicle-ids": "node db/migrate_vehicle_ids.js",
+    "migrate:activity-record-id": "node db/migrate_activity_record_id.js",
+    "migrate:delivery-vehicle-snapshot": "node db/migrate_delivery_vehicle_snapshot.js",
+    "migrate:vehicle-rates": "node db/migrate_vehicle_rates.js",
+    "migrate:company-profile": "node db/migrate_company_profile.js",
+    "migrate:company-registration": "node db/migrate_company_registration.js",
+    "migrate:user-history": "node db/migrate_user_history.js",
+    "migrate:unit-values": "node db/migrate_unit_values.js",
+    "migrate:entity-ids": "node db/migrate_entity_ids.js",
+    "migrate:supplier-types": "node db/migrate_supplier_types.js",
+    "check:po-database": "node db/check_po_database.js",
+    "migrate:po-paid-status": "node db/migrate_po_paid_status.js",
+    "migrate:po-payment-email": "node db/migrate_po_payment_email.js",
+    "migrate:po-payment-amount": "node db/migrate_po_payment_amount.js",
+    "migrate:po-workflow": "node db/migrate_po_workflow.js",
+    "migrate:supplier-history": "node db/migrate_supplier_history.js",
+    "migrate:walkin-customer": "node db/migrate_walkin_customer.js",
+    "migrate:customer-history": "node db/migrate_customer_history.js",
+    "migrate:delivery-lifecycle": "node db/migrate_delivery_lifecycle.js",
+    "migrate:pickup": "node db/migrate_pickup_claim.js",
+    "migrate:financial-rules": "node db/migrate_financial_rules.js",
+    "migrate:business-operations": "node db/migrate_business_operations_settings.js",
+    "migrate:product-history": "node db/migrate_product_history.js",
+    "migrate:users-audit": "node db/migrate_users_audit.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node db/seed.js",
+    "prestart": "node -e \"if(process.env.NODE_ENV!=='production')require('./db/seed.js')\"",
+    "predev": "npm run seed",
+    "seed:capture": "node db/currentSnapshot.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "exceljs": "^3.4.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.0",
+    "nodemailer": "^10.0.10",
+    "openrouteservice-js": "^0.4.1",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.10"
+  }
+}

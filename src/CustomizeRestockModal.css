@@ -1,0 +1,264 @@
+.customize-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.customize-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px 36px;
+  max-width: 640px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customize-modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+/* Header Form Fields */
+.customize-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customize-field-row {
+  display: grid;
+  grid-template-columns: 140px 16px 1fr;
+  align-items: center;
+}
+
+.customize-field-row label {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.customize-colon {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.customize-input-wrap input,
+.customize-input-wrap select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  color: #374151;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.customize-input-wrap input:focus,
+.customize-input-wrap select:focus {
+  border-color: #1a62ff;
+}
+
+.customize-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 4px 0;
+}
+
+/* Section Header & Add Item Button */
+.customize-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customize-section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.btn-add-item {
+  background-color: #1a62ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-add-item:hover {
+  background-color: #004ee8;
+}
+
+/* Items Table */
+.customize-table-wrap {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.customize-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.customize-table thead tr {
+  background-color: #1e3a5f;
+}
+
+.customize-table thead th {
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.customize-table tbody td {
+  padding: 10px 12px;
+  text-align: center;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.customize-table tbody tr:nth-child(odd) {
+  background-color: #f3f4f6;
+}
+
+.customize-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Footer Action Buttons */
+.customize-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btn-modal-cancel,
+.btn-modal-draft {
+  flex: 1;
+  background-color: #f0f0f0;
+  color: #000000;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-modal-cancel:hover,
+.btn-modal-draft:hover {
+  background-color: #e4e4e4;
+}
+
+.btn-modal-apply {
+  flex: 1;
+  background-color: #1a62ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-modal-apply:hover {
+  background-color: #004ee8;
+}
+
+/* Add Item Submodal */
+.add-item-submodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.add-item-submodal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 28px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-item-submodal-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.add-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-item-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.add-item-field label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.add-item-field input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.add-item-submodal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}

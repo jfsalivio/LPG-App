@@ -1,0 +1,111 @@
+﻿import React, { useEffect, useState } from "react";
+import "./CustomizeSingleItemModal.css";
+import { apiRequest } from "./api";
+
+export default function CustomizeSingleItemModal({ isOpen, onClose, selectedItem, onSaved }) {
+  const [preferredQty, setPreferredQty] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [overrideReason, setOverrideReason] = useState("");
+
+  useEffect(() => {
+    if (selectedItem) {
+      setPreferredQty(selectedItem.suggestedQty);
+      setError("");
+      setOverrideReason("");
+    }
+  }, [selectedItem]);
+
+  if (!isOpen || !selectedItem) return null;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const qty = Number(preferredQty);
+    if (!qty || qty <= 0) {
+      setError("Preferred quantity must be a positive number.");
+      return;
+    }
+
+    const changed = qty !== Number(selectedItem.suggestedQty);
+    if (changed && !overrideReason.trim()) {
+      setError("Enter a reason for changing the suggested quantity.");
+      return;
+    }
+    setIsSubmitting(true);
+    setError("");
+    try {
+      await apiRequest(`/restocking/${selectedItem.restockId}`, {
+        method: "PUT",
+        body: JSON.stringify({ recommendedQuantity: qty, overrideReason: overrideReason.trim() }),
+      });
+      onSaved?.();
+      onClose();
+    } catch (err) {
+      setError(err.message || "Failed to update recommendation.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="single-item-modal-overlay">
+      <div className="single-item-modal-card">
+        <h2 className="single-item-modal-title">Customize Restock Quantity</h2>
+
+        {error && <p style={{ color: "#dc2626", fontWeight: 600, marginTop: -8 }}>{error}</p>}
+
+        <form onSubmit={handleSubmit} className="single-item-form-grid">
+          <div className="single-item-row">
+            <div className="single-item-field">
+              <label>Restock ID</label>
+              <input type="text" value={selectedItem.restockId} disabled />
+            </div>
+            <div className="single-item-field">
+              <label>Product</label>
+              <input type="text" value={selectedItem.productName} disabled />
+            </div>
+          </div>
+
+          <div className="single-item-row">
+            <div className="single-item-field">
+              <label>Current Stock</label>
+              <input type="text" value={selectedItem.currentStock} disabled />
+            </div>
+            <div className="single-item-field">
+              <label>Reorder Level</label>
+              <input type="text" value={selectedItem.reorderLevel} disabled />
+            </div>
+          </div>
+
+          <div className="single-item-field">
+            <label>Preferred Order Quantity</label>
+            <input
+              type="number"
+              min="1"
+              value={preferredQty}
+              onChange={(e) => setPreferredQty(e.target.value)}
+              placeholder="Enter Number"
+            />
+          </div>
+          {Number(preferredQty) !== Number(selectedItem.suggestedQty) && (
+            <div className="single-item-field">
+              <label>Reason for change</label>
+              <input type="text" maxLength={255} value={overrideReason}
+                onChange={(e) => setOverrideReason(e.target.value)} placeholder="e.g. Supplier promo, seasonal demand" />
+            </div>
+          )}
+
+          {/* Footer Actions */}
+          <div className="single-item-modal-actions">
+            <button type="button" className="btn-single-cancel" onClick={onClose}>
+              Cancel
+            </button>
+            <button type="submit" className="btn-single-save" disabled={isSubmitting}>
+              {isSubmitting ? "Saving…" : "Save"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}

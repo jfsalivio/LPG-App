@@ -1,0 +1,257 @@
+.add-user-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.add-user-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px 40px 36px 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.add-user-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 20px 0;
+}
+
+.add-user-section {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.03em;
+  margin: 24px 0 14px 0;
+  text-transform: uppercase;
+}
+
+.add-user-section:first-of-type {
+  margin-top: 0;
+}
+
+.add-user-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.add-user-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 720px) {
+  .add-user-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 0.9rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.field-input {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.9rem;
+  color: #111827;
+  outline: none;
+  width: 100%;
+}
+
+.field-input::placeholder {
+  color: #9ca3af;
+}
+
+.field-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 11px 36px 11px 14px;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.field-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.select-icon {
+  position: absolute;
+  right: 12px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Module access checkboxes                                               */
+/* ---------------------------------------------------------------------- */
+
+.module-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  row-gap: 16px;
+}
+
+.module-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1f2937;
+  position: relative;
+}
+
+.module-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.module-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1.5px solid #d1d5db;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+
+.module-checkbox input:checked + .module-box {
+  background: #1e3a5f;
+  border-color: #1e3a5f;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Error + actions                                                        */
+/* ---------------------------------------------------------------------- */
+
+.add-user-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin: 18px 0 0 0;
+}
+
+.add-user-actions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.add-user-btn {
+  min-width: 190px;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.add-user-btn.cancel {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.add-user-btn.cancel:hover {
+  background: #d1d5db;
+}
+
+.add-user-btn.save {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.add-user-btn.save:hover {
+  background: #1d4ed8;
+}
+.user-settings-overlay { z-index: 1100; }
+.user-settings-gear { background: transparent; border: 0; color: #475569; cursor: pointer; padding: 2px 5px; vertical-align: middle; }
+.user-settings-gear:hover { color: #2563eb; }
+.user-settings-overlay .users-table-wrap { overflow-x: auto; }
+/* User form layout; keep shared settings-modal styles intact. */
+.user-form-modal { max-width: 920px; }
+.user-form-modal .add-user-grid.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; }
+.user-form-modal .field { min-width: 0; }
+.user-form-modal .field.full-width { grid-column: 1 / -1; }
+.user-form-modal .field-label { display: flex; align-items: center; justify-content: space-between; min-height: 24px; font-weight: 600; }
+.user-form-modal .field-input, .user-form-modal .field-select { box-sizing: border-box; min-height: 44px; }
+.user-form-modal .add-user-section { margin-top: 28px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+.user-form-modal .add-user-section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.user-access-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+.user-form-modal .user-access-heading .add-user-section { margin: 0; padding: 0; border: 0; }
+.user-access-heading > span { font-size: 0.78rem; font-weight: 600; color: #1e3a5f; background: #eff6ff; border-radius: 20px; padding: 5px 10px; white-space: nowrap; }
+.user-access-help { display: flex; align-items: center; gap: 7px; color: #64748b; font-size: 0.82rem; margin: 10px 0 16px; }
+.user-access-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.user-access-group { border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; align-self: start; }
+.user-access-group h4 { margin: 0; padding: 12px 14px; background: #f8fafc; color: #334155; font-size: 0.82rem; font-weight: 700; border-bottom: 1px solid #e2e8f0; }
+.user-access-group ul { list-style: none; padding: 0; margin: 0; }
+.user-access-group li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; font-size: 0.8rem; }
+.user-access-group li + li { border-top: 1px solid #f1f5f9; }
+.user-access-module { display: flex; align-items: center; gap: 8px; color: #334155; }
+.user-access-module svg { flex-shrink: 0; }
+.user-access-group .enabled .user-access-module svg { color: #15803d; }
+.user-access-group .restricted .user-access-module { color: #64748b; }
+.user-access-status { color: #64748b; white-space: nowrap; font-size: 0.7rem; }
+.user-access-group .enabled .user-access-status { color: #15803d; background: #f0fdf4; padding: 3px 7px; border-radius: 5px; }
+.user-form-modal .add-user-actions { justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+.user-form-modal .add-user-actions .add-user-btn { min-width: 130px; width: auto; font-size: 0.9rem; }
+@media (max-width: 640px) {
+  .user-form-modal { padding: 24px 20px; }
+  .user-form-modal .add-user-grid.two-col, .user-access-groups { grid-template-columns: 1fr; }
+  .user-access-heading { flex-wrap: wrap; }
+  .user-form-modal .add-user-actions .add-user-btn { min-width: 0; flex: 1; }
+}
+.user-access-toggle { display: inline-flex; align-items: center; gap: 8px; position: relative; flex-shrink: 0; cursor: default; }
+.user-access-toggle input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.user-access-toggle-track { display: inline-block; width: 36px; height: 20px; border-radius: 999px; background: #cbd5e1; position: relative; transition: background 150ms ease; }
+.user-access-toggle-track::after { content: ''; position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); transition: transform 150ms ease; }
+.user-access-toggle input:checked + .user-access-toggle-track { background: #2563eb; }
+.user-access-toggle input:checked + .user-access-toggle-track::after { transform: translateX(16px); }
+.user-access-toggle-state { min-width: 20px; font-size: 0.75rem; color: #64748b; }
+.user-access-toggle:has(input:not(:disabled)) { cursor: pointer; }
+.user-access-toggle input:focus-visible + .user-access-toggle-track { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.user-access-toggle:has(input:disabled) { cursor: not-allowed; }

@@ -1,0 +1,115 @@
+.single-item-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.single-item-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px 36px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.single-item-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.single-item-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.single-item-row {
+  display: flex;
+  gap: 16px;
+}
+
+.single-item-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.single-item-field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.single-item-field input,
+.single-item-field select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: #111827;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.single-item-field input:focus,
+.single-item-field select:focus {
+  border-color: #1a62ff;
+}
+
+.single-item-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.btn-single-cancel {
+  flex: 1;
+  background-color: #f0f0f0;
+  color: #000000;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-single-cancel:hover {
+  background-color: #e4e4e4;
+}
+
+.btn-single-save {
+  flex: 1;
+  background-color: #1a62ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-single-save:hover {
+  background-color: #004ee8;
+}

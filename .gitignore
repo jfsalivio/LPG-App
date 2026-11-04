@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+dist/
+
+# Environment files (contain DB passwords, JWT secret, SMTP credentials)
+.env
+.env.*
+!.env.example
+*.local
+
+# Python (ML service)
+ML/venv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Trained model artifacts (regenerate with `python train_model.py`)
+ML/*.pkl
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vercel
+.env*
+!.env.example
+
+# Private current database seed (includes account hashes and business records)
+Backend/db/snapshots/
+
+# Imported reference checkout
+.source/
+# Android build outputs
+android/.gradle/
+android/local.properties
+android/**/build/
+.gradle-user-home/
+test-results/
+playwright-report/

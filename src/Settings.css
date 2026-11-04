@@ -1,0 +1,368 @@
+﻿/* ─── Reset & Base ─────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: #f4f6fa;
+  color: #1e293b;
+}
+
+
+
+/* ─── Cards ────────────────────────────────────────────────── */
+.settings-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Grid Layouts ─────────────────────────────────────────── */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px 48px;
+}
+
+.business-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 24px 48px;
+  align-items: start;
+}
+
+.input-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Form Elements ────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #dce1eb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1e293b;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+/* ─── Checkboxes & Toggles ─────────────────────────────────── */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #334155;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #dce1eb;
+  cursor: pointer;
+}
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:checked + .toggle-slider {
+  background-color: #2563eb;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ─── Logo Uploader ────────────────────────────────────────── */
+.logo-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dropzone {
+  width: 120px;
+  height: 100px;
+  background: #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Added specific class for the uploaded preview image */
+.logo-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.choose-file-btn {
+  background: #ffffff;
+  border: 1px solid #94a3b8;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.upload-label {
+  background: #000000;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* ─── Actions & Buttons ────────────────────────────────────── */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.card-actions-inline {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.btn {
+  padding: 10px 32px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background: #1d4ed8; /* Blue */
+  color: #ffffff;
+}
+
+.btn-success {
+  background: #22c55e; /* Green */
+  color: #ffffff;
+}
+
+/* Alignment utilities */
+.flex-bottom-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+/* Business operations settings */
+.settings-page .operations-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 48px; }
+.settings-page .operations-summary dt { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.settings-page .operations-summary dd { margin: 0; font-size: 14px; }
+.operations-dialog { margin: auto; width: min(640px, calc(100% - 32px)); max-height: calc(100dvh - 48px); overflow-y: auto; border: none; border-radius: 20px; padding: 28px; color: #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+.operations-dialog::backdrop { background: rgba(0,0,0,.4); }
+.operations-heading { display: flex; align-items: start; gap: 16px; margin-bottom: 24px; }
+.operations-heading h2 { font-size: 22px; flex: 1; }
+.operations-close { background: none; border: none; font-size: 26px; cursor: pointer; }
+.operations-fields { display: flex; flex-direction: column; gap: 24px; border: none; padding: 0; min-width: 0; }
+.operations-group { border: none; padding: 0; min-width: 0; }
+.operations-group legend { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+.operations-day-options { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+.operations-hours { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.operations-time { display: flex; align-items: center; gap: 6px; }
+.operations-time select.form-control { padding: 10px 22px 10px 8px; background-position: right 6px center; }
+.operations-help { color: #64748b; font-size: 13px; line-height: 1.5; margin: 0 0 12px; }
+.operations-error { color: #dc2626; margin-top: 16px; }
+.operations-cancel { background: #e2e8f0; color: #0f172a; }
+.operations-dialog button:disabled { opacity: .6; cursor: wait; }
+@media (max-width: 600px) {
+  .settings-page .operations-summary, .operations-hours { grid-template-columns: 1fr; }
+  .operations-dialog { padding: 20px; }
+  .operations-dialog .card-actions { flex-wrap: wrap; }
+}
+
+/* Financial rules reuse the Settings modal layout. */
+.financial-dialog h2 { margin: 0 0 24px; }
+.financial-dialog .toggle-group { gap: 20px; align-items: center; }
+.financial-dialog .toggle-switch { flex-shrink: 0; }
+.financial-dialog input:disabled + .toggle-slider { opacity: .45; cursor: not-allowed; }
+.financial-dialog .financial-controls .grid-2-col { margin-top: 12px; }
+.financial-dialog .operations-help { margin-top: 6px; }
+.financial-dialog .toggle-switch:focus-within { outline: 2px solid #2563eb; outline-offset: 3px; }
+
+/* Financial modal: paired tax controls and full-width discount rows. */
+.financial-dialog .financial-tax-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.financial-dialog .financial-currency-row { margin-top: 24px; }
+.financial-dialog .financial-discounts { margin-top: 28px; border-top: 1px solid #e2e8f0; padding-top: 24px; }
+.financial-discounts-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.financial-discounts-heading h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.financial-discounts-heading .operations-help { margin-bottom: 0; }
+.financial-add-discount { border: 1px solid #bfdbfe; border-radius: 8px; background: #eff6ff; color: #1d4ed8; padding: 9px 12px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.financial-discount-list { border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }
+.financial-discount-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 16px; align-items: center; padding: 14px; }
+.financial-discount-row + .financial-discount-row { border-top: 1px solid #e2e8f0; }
+.financial-discount-name { min-width: 0; cursor: pointer; }
+.financial-discount-name span { overflow-wrap: anywhere; }
+.financial-discount-rate { background: #f1f5f9; color: #334155; padding: 4px 9px; border-radius: 6px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.financial-remove-discount { border: none; background: transparent; color: #b91c1c; cursor: pointer; padding: 6px 0; font-size: 13px; }
+.financial-remove-discount:hover { text-decoration: underline; }
+.financial-discount-empty { padding: 16px; margin: 0; color: #64748b; font-size: 13px; }
+.financial-discount-editor { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; margin-top: 14px; padding: 16px; }
+.financial-discount-editor-fields { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; }
+@media (max-width: 480px) {
+ .financial-discounts-heading { flex-direction: column; gap: 10px; }
+ .financial-discount-row { gap: 10px; padding: 12px; }
+ .financial-discount-editor-fields { grid-template-columns: 1fr; }
+ .financial-dialog .financial-tax-row { gap: 12px; }
+}
+.vehicle-table-scroll { overflow-x: auto; }
+.vehicle-matrix-toolbar { display: flex; justify-content: flex-end; }
+.vehicle-rate-table { width: 100%; min-width: 640px; table-layout: fixed; border-collapse: collapse; font-size: 13px; }
+.vehicle-rate-table th, .vehicle-rate-table td { padding: 16px; text-align: left; vertical-align: middle; line-height: 1.5; border-bottom: 1px solid #e2e8f0; overflow-wrap: break-word; }
+.vehicle-rate-table th { background: #f8fafc; color: #475569; }
+.vehicle-rate-table td.vehicle-table-empty { text-align: center; padding: 40px 16px; color: #64748b; }
+.vehicle-rate-table td { font-variant-numeric: tabular-nums; }
+.vehicle-row-actions { display: flex; gap: 8px; }
+.vehicle-row-actions .btn { min-width: 36px; width: 36px; height: 36px; padding: 8px; }
+.vehicle-rate-dialog { box-sizing: border-box; width: min(1000px, calc(100% - 48px)); max-width: 1000px; }
+.vehicle-rate-dialog h2, .vehicle-editor-dialog h2 { margin: 0 0 12px; font-size: 22px; }
+.vehicle-rate-dialog > .operations-help, .vehicle-editor-dialog > .operations-help { margin-bottom: 24px; }
+.vehicle-editor-dialog { box-sizing: border-box; width: min(560px, calc(100% - 32px)); }
+.vehicle-editor-dialog::backdrop { background: rgba(15, 23, 42, .18); }
+.vehicle-delete-dialog { box-sizing: border-box; width: min(460px, calc(100% - 32px)); }
+.vehicle-delete-dialog h2 { margin: 0 0 16px; font-size: 22px; }
+.vehicle-delete-dialog p { line-height: 1.6; overflow-wrap: anywhere; }
+.vehicle-delete-dialog::backdrop { background: rgba(15, 23, 42, .18); }
+.vehicle-delete-confirm { background: #dc2626; color: #fff; }
+.vehicle-editor-form { min-width: 0; }
+.vehicle-editor-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.vehicle-editor-fields .form-group:first-child { grid-column: 1 / -1; }
+.vehicle-editor-fields .form-group { min-width: 0; margin: 0; }
+.vehicle-editor-fields .form-control { box-sizing: border-box; width: 100%; }
+.vehicle-draft-help { margin-top: 20px; }
+@media (max-width: 600px) {
+  .vehicle-editor-fields { grid-template-columns: 1fr; }
+}

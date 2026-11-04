@@ -1,0 +1,39 @@
+﻿CREATE TABLE IF NOT EXISTS CompanySettings (
+  CompanyID VARCHAR(20) PRIMARY KEY, -- Changed from INT to VARCHAR(20)
+  CompanyName VARCHAR(150) NULL,
+  Address VARCHAR(255) NULL,
+  ContactEmail VARCHAR(150) NULL,
+  Phone              VARCHAR(30) NULL,
+  LogoDataUrl        LONGTEXT NULL,
+
+  BusinessDays VARCHAR(100) NOT NULL DEFAULT 'Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
+  OpeningTime TIME NOT NULL DEFAULT '08:00:00',
+  ClosingTime TIME NOT NULL DEFAULT '17:00:00',
+  PickupExpirationDays INT UNSIGNED NOT NULL DEFAULT 3,
+  MaxDeliveryAttempts INT UNSIGNED NOT NULL DEFAULT 3,
+  AllowIssueRefund TINYINT(1) NOT NULL DEFAULT 0,
+  EnableCancellationFee TINYINT(1) NOT NULL DEFAULT 0,
+  CancellationFeeType VARCHAR(10) NOT NULL DEFAULT 'Fixed',
+  CancellationFeeValue DECIMAL(12,2) NOT NULL DEFAULT 0,
+  TaxRate DECIMAL(5,2) NOT NULL DEFAULT 12.00,
+  TaxEnabled TINYINT(1) NOT NULL DEFAULT 1,
+  Currency VARCHAR(10) NOT NULL DEFAULT 'PHP',
+  RoundUp TINYINT(1) NOT NULL DEFAULT 0,
+  RoundDown TINYINT(1) NOT NULL DEFAULT 0,
+  TwoDecimalStandard TINYINT(1) NOT NULL DEFAULT 1,
+
+  ReceiptHeader TEXT NULL,
+  ShowLogoOnReceipt TINYINT(1) NOT NULL DEFAULT 1,
+  ShowTaxBreakdown TINYINT(1) NOT NULL DEFAULT 1,
+  FooterMessage VARCHAR(255) NULL,
+  PrintSize VARCHAR(10) NOT NULL DEFAULT '80mm',
+
+  AutoLogoutMinutes INT NOT NULL DEFAULT 30,
+  SystemTimezone VARCHAR(50) NOT NULL DEFAULT 'Asia/Manila',
+  DateFormat VARCHAR(20) NOT NULL DEFAULT 'MM/DD/YYYY',
+  Language VARCHAR(10) NOT NULL DEFAULT 'en',
+  Theme VARCHAR(10) NOT NULL DEFAULT 'light',
+
+  UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
+);

@@ -1,0 +1,64 @@
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.logout-modal {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 380px;
+  width: 100%;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.logout-modal h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.logout-modal p {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Reuse existing button styles or define them here */
+.btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid #dce1eb;
+  color: #475569;
+}
+.btn-outline:hover {
+  background: #f1f5f9;
+}
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+.btn-danger:hover {
+  background: #dc2626;
+}

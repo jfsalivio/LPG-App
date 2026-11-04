@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GasTrack</string>
+    <string name="title_activity_main">GasTrack</string>
+    <string name="package_name">com.gastrack.lpg</string>
+    <string name="custom_url_scheme">com.gastrack.lpg</string>
+</resources>

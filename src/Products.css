@@ -1,0 +1,214 @@
+/* ---------------------------------------------------------------------- */
+/* Page layout                                                            */
+/* ---------------------------------------------------------------------- */
+
+.products-page {
+  background: #f3f5f8;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111827;
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/* Toolbar / Search & Filters & Add Product                               */
+/* ---------------------------------------------------------------------- */
+
+.products-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.products-search {
+  position: relative;
+  flex: 1;
+}
+
+.products-search-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px 40px 10px 14px;
+  font-size: 0.875rem;
+  color: #374151;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.products-search-input:focus {
+  border-color: #1e3a5f;
+}
+
+.products-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.products-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.products-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 34px 10px 14px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.products-select:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
+
+.products-select-icon {
+  position: absolute;
+  right: 10px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.add-product-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #0082fb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-product-btn:hover {
+  background: #006dd2;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Table Structure                                                        */
+/* ---------------------------------------------------------------------- */
+
+.products-table-wrap {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.products-table thead tr {
+  background: #1e3a5f;
+}
+
+.products-table thead th {
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 14px 24px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.products-table tbody td {
+  padding: 14px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.products-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.products-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Column Widths & Alignments */
+.products-table th:nth-child(1), .products-table td:nth-child(1) { width: 12%; text-align: left; }   /* Product ID */
+.products-table th:nth-child(2), .products-table td:nth-child(2) { width: 22%; text-align: left; }   /* Product Name */
+.products-table th:nth-child(3), .products-table td:nth-child(3) { width: 16%; text-align: left; }   /* Category */
+.products-table th:nth-child(4), .products-table td:nth-child(4) { width: 18%; text-align: left; }   /* Supplier */
+.products-table th:nth-child(5), .products-table td:nth-child(5) { width: 12%; text-align: center; } /* Cost Price */
+.products-table th:nth-child(6), .products-table td:nth-child(6) { width: 10%; text-align: center; } /* Status */
+.products-table th:nth-child(7), .products-table td:nth-child(7) { width: 10%; text-align: center; } /* Actions */
+
+/* ---------------------------------------------------------------------- */
+/* Status Pills & Action Icons                                            */
+/* ---------------------------------------------------------------------- */
+
+.products-status-pill {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  min-width: 90px;
+}
+
+.products-status-pill.active {
+  background: #25c960;
+}
+
+.products-status-pill.inactive {
+  background: #d90429;
+}
+
+.products-action-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.products-action-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.products-action-icon.view {
+  color: #eaaa08;
+}
+
+.products-action-icon.edit {
+  color: #25c960;
+}
+
+.products-action-icon.delete {
+  color: #d90429;
+}
+
+.products-action-icon:hover {
+  opacity: 0.7;
+}

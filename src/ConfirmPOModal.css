@@ -1,0 +1,75 @@
+.po-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.po-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 36px 40px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.po-modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.po-modal-description {
+  font-size: 0.938rem;
+  color: #333333;
+  margin: 0 0 32px 0;
+  line-height: 1.4;
+}
+
+.po-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.po-modal-btn-cancel {
+  flex: 1;
+  background-color: #f0f0f0;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.po-modal-btn-cancel:hover {
+  background-color: #e4e4e4;
+}
+
+.po-modal-btn-confirm {
+  flex: 1;
+  background-color: #1a62ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 0.938rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.po-modal-btn-confirm:hover {
+  background-color: #004ee8;
+}
